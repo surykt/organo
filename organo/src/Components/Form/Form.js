@@ -12,18 +12,31 @@ export default function Form() {
     "Devops",
     "UX e Design",
     "Mobile",
-    "Inovação e Gestão"
+    "Inovação e Gestão",
   ];
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    console.log("Os dados foram submitados");
+  };
 
   return (
     <section className="form">
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2>Preencha os dados para criar o card do colaborador</h2>
-        <TextField label="Nome" placeholder="Digite seu nome" />
-        <TextField label="Cargo" placeholder="Digite seu cargo" />
-        <TextField label="Imagem" placeholder="Informe o endereço da imagem" />
+        <TextField required={true} label="Nome" placeholder="Digite seu nome" />
+        <TextField
+          required={true}
+          label="Cargo"
+          placeholder="Digite seu cargo"
+        />
+        <TextField
+          required={true}
+          label="Imagem"
+          placeholder="Informe o endereço da imagem"
+        />
         <DropdownList label="Time" items={times} />
-        <Button text="Criar Card" />
+        <Button>Criar Card</Button>
       </form>
     </section>
   );
