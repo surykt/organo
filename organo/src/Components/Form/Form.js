@@ -2,8 +2,9 @@ import React from "react";
 import "./Form.css";
 import TextField from "../TextField/TextField";
 import DropdownList from "../DropdownList/DropdownList";
+import Button from "../Button/Button";
 
-export default function () {
+export default function Form() {
   const times = [
     "Programação",
     "Front-end",
@@ -11,7 +12,7 @@ export default function () {
     "Devops",
     "UX e Design",
     "Mobile",
-    "Inovação e Gestão",
+    "Inovação e Gestão"
   ];
 
   return (
@@ -22,6 +23,7 @@ export default function () {
         <TextField label="Cargo" placeholder="Digite seu cargo" />
         <TextField label="Imagem" placeholder="Informe o endereço da imagem" />
         <DropdownList label="Time" items={times} />
+        <Button text="Criar Card" />
       </form>
     </section>
   );
