@@ -24,7 +24,11 @@ export default function Form() {
     <section className="form">
       <form onSubmit={handleSubmit}>
         <h2>Preencha os dados para criar o card do colaborador</h2>
-        <TextField required={true} label="Nome" placeholder="Digite seu nome" />
+        <TextField
+          required={true}
+          label="Nome"
+          placeholder="Digite seu nome"
+        />
         <TextField
           required={true}
           label="Cargo"
