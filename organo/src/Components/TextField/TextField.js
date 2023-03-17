@@ -1,16 +1,16 @@
 import React from "react";
 import "./TextField.css";
 
-export default function TextField({ label, placeholder, required }) {
+export default function TextField({ label, placeholder, required, value, valueChange }) {
 
   const handleChange = event => {
-    console.log(event.target.value)
+    valueChange(event.target.value)
   }
 
   return (
     <div className="text-field">
       <label>{label}</label>
-      <input onChange={handleChange} required={required} placeholder={placeholder} />
+      <input value={value} onChange={handleChange} required={required} placeholder={placeholder} />
     </div>
   );
 }

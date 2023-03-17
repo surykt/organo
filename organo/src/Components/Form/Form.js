@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Form.css";
 import TextField from "../TextField/TextField";
 import DropdownList from "../DropdownList/DropdownList";
 import Button from "../Button/Button";
 
 export default function Form() {
+  const [name, setName] = useState('')
+  const [role, setRole] = useState('')
+  const [image, setImage] = useState('')
+
   const times = [
     "Programação",
     "Front-end",
@@ -28,16 +32,22 @@ export default function Form() {
           required={true}
           label="Nome"
           placeholder="Digite seu nome"
+          value={name}
+          valueChange={value => setName(value)}
         />
         <TextField
           required={true}
           label="Cargo"
           placeholder="Digite seu cargo"
+          value={role}
+          valueChange={value => setRole(value)}
         />
         <TextField
           required={true}
           label="Imagem"
           placeholder="Informe o endereço da imagem"
+          value={image}
+          valueChange={value => setImage(value)}
         />
         <DropdownList label="Time" items={times} />
         <Button>Criar Card</Button>
