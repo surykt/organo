@@ -4,12 +4,13 @@ import TextField from "../TextField/TextField";
 import DropdownList from "../DropdownList/DropdownList";
 import Button from "../Button/Button";
 
-export default function Form() {
+export default function Form({ registerEmployee }) {
   const [name, setName] = useState('')
   const [role, setRole] = useState('')
   const [image, setImage] = useState('')
+  const [team, setTeam] = useState('')
 
-  const times = [
+  const teams = [
     "Programação",
     "Front-end",
     "Data Science",
@@ -21,7 +22,12 @@ export default function Form() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log("Os dados foram submitados");
+    registerEmployee({
+      name,
+      role,
+      image,
+      team
+    })
   };
 
   return (
@@ -49,7 +55,12 @@ export default function Form() {
           value={image}
           valueChange={value => setImage(value)}
         />
-        <DropdownList label="Time" items={times} />
+        <DropdownList
+          label="Time"
+          items={teams}
+          value={team}
+          valueChange={value => setTeam(value)}
+        />
         <Button>Criar Card</Button>
       </form>
     </section>
