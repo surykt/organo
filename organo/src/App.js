@@ -65,6 +65,7 @@ function App() {
             title={team.name}
             primaryColor={team.primaryColor}
             secondaryColor={team.secondaryColor}
+            employees={employees}
           />
         );
       })}
