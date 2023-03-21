@@ -4,21 +4,11 @@ import TextField from "../TextField/TextField";
 import DropdownList from "../DropdownList/DropdownList";
 import Button from "../Button/Button";
 
-export default function Form({ registerEmployee }) {
-  const [name, setName] = useState('')
-  const [role, setRole] = useState('')
-  const [image, setImage] = useState('')
-  const [team, setTeam] = useState('')
-
-  const teams = [
-    "Programação",
-    "Front-end",
-    "Data Science",
-    "Devops",
-    "UX e Design",
-    "Mobile",
-    "Inovação e Gestão",
-  ];
+export default function Form({ registerEmployee, teams }) {
+  const [name, setName] = useState("");
+  const [role, setRole] = useState("");
+  const [image, setImage] = useState("");
+  const [team, setTeam] = useState("");
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -26,8 +16,8 @@ export default function Form({ registerEmployee }) {
       name,
       role,
       image,
-      team
-    })
+      team,
+    });
   };
 
   return (
