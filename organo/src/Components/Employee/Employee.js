@@ -1,10 +1,10 @@
 import React from "react";
 import "./Employee.css";
 
-export default function Employee({ name, role, image }) {
+export default function Employee({ name, role, image, background }) {
   return (
     <div className="employee">
-      <div className="header">
+      <div className="header" style={{ backgroundColor: background }}>
         <img src={image} alt={name}></img>
       </div>
       <div className="footer-card">
