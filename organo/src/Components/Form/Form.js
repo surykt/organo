@@ -18,6 +18,10 @@ export default function Form({ registerEmployee, teams }) {
       image,
       team,
     });
+    setName("")
+    setRole("")
+    setImage("")
+    setTeam("")
   };
 
   return (

@@ -1,4 +1,3 @@
-import { toHaveErrorMessage } from "@testing-library/jest-dom/dist/matchers";
 import React from "react";
 import Employee from "../Employee/Employee";
 import "./Team.css";
@@ -10,17 +9,20 @@ export default function Team({
   employees,
 }) {
   return (
-    <section className="team" style={{ backgroundColor: secondaryColor }}>
+    employees.length > 0 && <section className="team" style={{ backgroundColor: secondaryColor }}>
       <h3 style={{ borderColor: primaryColor }}>{title}</h3>
-      {employees.map(employee => {
-        return (
-          <Employee
-            name={employee.name}
-            image={employee.image}
-            role={employee.role}
-          />
-        );
-      })}
+      <div className="employees">
+        {employees.map(employee => {
+          return (
+            <Employee
+              key={employee.name}
+              name={employee.name}
+              image={employee.image}
+              role={employee.role}
+            />
+          );
+        })}
+      </div>
     </section>
   );
 }

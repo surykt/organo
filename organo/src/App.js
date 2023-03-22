@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Banner from "./Components/Banner/Banner";
+import Footer from "./Components/Footer/Footer";
 import Form from "./Components/Form/Form";
 import Team from "./Components/Team/Team";
 
@@ -7,7 +8,6 @@ function App() {
   const [employees, setEmployees] = useState([]);
 
   const addNewEmployee = employee => {
-    console.log(employee);
     setEmployees([...employees, employee]);
   };
 
@@ -65,10 +65,11 @@ function App() {
             title={team.name}
             primaryColor={team.primaryColor}
             secondaryColor={team.secondaryColor}
-            employees={employees}
+            employees={employees.filter(employee => employee.team === team.name)}
           />
         );
       })}
+      <Footer />
     </div>
   );
 }
