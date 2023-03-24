@@ -11,6 +11,10 @@ function App() {
     setEmployees([...employees, employee]);
   };
 
+  function deleteEmployee() {
+    console.log('employee deleted')
+  }
+
   const teams = [
     {
       name: "Programação",
@@ -66,6 +70,7 @@ function App() {
             primaryColor={team.primaryColor}
             secondaryColor={team.secondaryColor}
             employees={employees.filter(employee => employee.team === team.name)}
+            deleteEmployee={deleteEmployee}
           />
         );
       })}
