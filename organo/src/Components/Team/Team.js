@@ -7,25 +7,33 @@ export default function Team({
   primaryColor,
   secondaryColor,
   employees,
-  deleteEmployee
+  deleteEmployee,
 }) {
-
   return (
-    employees.length > 0 && <section className="team" style={{ backgroundColor: secondaryColor }}>
-      <h3 style={{ borderColor: primaryColor }}>{title}</h3>
-      <div className="employees">
-        {employees.map(employee => {
-          return (
-            <Employee
-              key={employee.name}
-              name={employee.name}
-              image={employee.image}
-              role={employee.role}
-              deleteEmployee={deleteEmployee}
-            />
-          );
-        })}
-      </div>
-    </section>
+    employees.length > 0 && (
+      <section
+        className="team"
+        style={{
+          backgroundColor: secondaryColor,
+          backgroundImage: "url(/images/fundo.png)",
+        }}
+      >
+        <h3 style={{ borderColor: primaryColor }}>{title}</h3>
+        <div className="employees">
+          {employees.map(employee => {
+            return (
+              <Employee
+                key={employee.name}
+                name={employee.name}
+                image={employee.image}
+                role={employee.role}
+                deleteEmployee={deleteEmployee}
+                backgroundColor={primaryColor}
+              />
+            );
+          })}
+        </div>
+      </section>
+    )
   );
 }

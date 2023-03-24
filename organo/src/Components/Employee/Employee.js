@@ -1,12 +1,18 @@
 import React from "react";
-import { FaTrashAlt } from 'react-icons/fa'
+import { FaTrashAlt } from "react-icons/fa";
 import "./Employee.css";
 
-export default function Employee({ name, role, image, deleteEmployee}) {
+export default function Employee({
+  name,
+  role,
+  image,
+  deleteEmployee,
+  backgroundColor,
+}) {
   return (
     <div className="employee">
-      <FaTrashAlt className="delete-btn" onClick={deleteEmployee}/>
-      <div className="header">
+      <FaTrashAlt className="delete-btn" onClick={deleteEmployee} />
+      <div className="header" style={{ backgroundColor: backgroundColor }}>
         <img src={image} alt={name}></img>
       </div>
       <div className="footer-card">
