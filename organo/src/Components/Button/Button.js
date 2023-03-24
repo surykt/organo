@@ -2,5 +2,9 @@ import React from "react";
 import "./Button.css";
 
 export default function Button({ children }) {
-  return <button className="button">{children}</button>;
+  return(
+    <div>
+      <button className="button">{children}</button>
+    </div>
+  )
 }
