@@ -8,7 +8,12 @@ export default function Team({
   secondaryColor,
   employees,
   deleteEmployee,
+  changeColor,
 }) {
+  const handleChange = e => {
+    changeColor(title, e.target.value);
+  };
+
   return (
     employees.length > 0 && (
       <section
@@ -18,6 +23,11 @@ export default function Team({
           backgroundImage: "url(/images/fundo.png)",
         }}
       >
+        <input
+          value={secondaryColor}
+          onChange={handleChange}
+          placeholder="Personalize a cor de fundo do seu time"
+        />
         <h3 style={{ borderColor: primaryColor }}>{title}</h3>
         <div className="employees">
           {employees.map(employee => {

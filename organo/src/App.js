@@ -12,10 +12,10 @@ function App() {
   };
 
   function deleteEmployee() {
-    console.log('employee deleted')
+    console.log("employee deleted");
   }
 
-  const teams = [
+  const [teams, setTeams] = useState([
     {
       name: "Programação",
       primaryColor: "#57c278",
@@ -51,7 +51,15 @@ function App() {
       primaryColor: "#ff8a29",
       secondaryColor: "#ffeedf",
     },
-  ];
+  ]);
+
+  const changeColor = (teamTitle, color) => {
+    setTeams(
+      teams.map(team =>
+        team.name === teamTitle ? { ...team, secondaryColor: color } : team,
+      ),
+    );
+  };
 
   return (
     <div className="App">
@@ -69,8 +77,11 @@ function App() {
             title={team.name}
             primaryColor={team.primaryColor}
             secondaryColor={team.secondaryColor}
-            employees={employees.filter(employee => employee.team === team.name)}
+            employees={employees.filter(
+              employee => employee.team === team.name,
+            )}
             deleteEmployee={deleteEmployee}
+            changeColor={changeColor}
           />
         );
       })}
