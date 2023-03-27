@@ -9,9 +9,10 @@ export default function Team({
   employees,
   deleteEmployee,
   changeColor,
+  teamId,
 }) {
   const handleChange = e => {
-    changeColor(title, e.target.value);
+    changeColor(teamId, e.target.value);
   };
 
   return (
