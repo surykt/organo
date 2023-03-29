@@ -243,23 +243,26 @@ function App() {
       </header>
       <Form
         teams={teams.map(team => team.name)}
-        registerEmployee={employee => addNewEmployee(employee)}
+        registerEmployee={employee => setEmployees([...employees, employee])}
       />
-      {teams.map(team => {
-        return (
-          <Team
-            key={team.id}
-            title={team.name}
-            primaryColor={team.primaryColor}
-            secondaryColor={team.secondaryColor}
-            employees={employees.filter(
-              employee => employee.team === team.name,
-            )}
-            deleteEmployee={deleteEmployee}
-            changeColor={changeColor}
-          />
-        );
-      })}
+      <section className="times">
+        <h1>Minha organização</h1>
+        {teams.map(team => {
+          return (
+            <Team
+              key={team.id}
+              title={team.name}
+              primaryColor={team.primaryColor}
+              secondaryColor={team.secondaryColor}
+              employees={employees.filter(
+                employee => employee.team === team.name,
+              )}
+              deleteEmployee={deleteEmployee}
+              changeColor={changeColor}
+            />
+          );
+        })}
+      </section>
       <Footer />
     </div>
   );
