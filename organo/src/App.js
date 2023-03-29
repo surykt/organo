@@ -6,11 +6,7 @@ import Team from "./Components/Team/Team";
 import { v4 as uuidv4 } from "uuid";
 
 function App() {
-  function deleteEmployee() {
-    console.log("employee deleted");
-  }
-
-  const [teams, setTeams] = useState([
+  const teams = [
     {
       id: uuidv4(),
       name: "Programação",
@@ -53,7 +49,7 @@ function App() {
       primaryColor: "#ff8a29",
       secondaryColor: "#ffeedf",
     },
-  ]);
+  ];
 
   const initial = [
     {
@@ -228,14 +224,6 @@ function App() {
 
   const [employees, setEmployees] = useState(initial);
 
-  const changeColor = (teamId, color) => {
-    setTeams(
-      teams.map(team =>
-        team.name === teamId ? { ...team, secondaryColor: color } : team,
-      ),
-    );
-  };
-
   return (
     <div className="App">
       <header className="banner">
@@ -247,18 +235,14 @@ function App() {
       />
       <section className="times">
         <h1>Minha organização</h1>
-        {teams.map(team => {
+        {teams.map((team, id) => {
           return (
             <Team
-              key={team.id}
-              title={team.name}
-              primaryColor={team.primaryColor}
-              secondaryColor={team.secondaryColor}
+              key={id}
+              team={team}
               employees={employees.filter(
                 employee => employee.team === team.name,
               )}
-              deleteEmployee={deleteEmployee}
-              changeColor={changeColor}
             />
           );
         })}
