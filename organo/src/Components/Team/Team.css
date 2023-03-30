@@ -18,11 +18,7 @@
   margin-top: 32px;
 }
 
-.team input {
-  background-color: #bdc1fcb5;
-  border: none;
-  border-radius: 4px;
-  box-shadow: 2px 2px 2px 4px rgba(0, 0, 0, 0.08);
+.input-color {
   position: absolute;
   right: 24px;
   top: 24px;

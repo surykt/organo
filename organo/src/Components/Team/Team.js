@@ -1,8 +1,9 @@
 import React from "react";
+import { FaTeamspeak } from "react-icons/fa";
 import Employee from "../Employee/Employee";
 import "./Team.css";
 
-export default function Team({ team, employees }) {
+export default function Team({ team, employees, changeColor, deleteEmployee }) {
   return (
     employees.length > 0 && (
       <section
@@ -12,21 +13,21 @@ export default function Team({ team, employees }) {
           backgroundImage: "url(/images/fundo.png)",
         }}
       >
+        <input
+          type="color"
+          className="input-color"
+          value={team.primaryColor}
+          onChange={event => changeColor(event.target.value, team.name)}
+        />
         <h3 style={{ borderColor: team.primaryColor }}>{team.name}</h3>
         <div className="employees">
           {employees.map((employee, id) => {
-            console.log(
-              <Employee
-                key={id}
-                employee={employee}
-                backgroundColor={team.primaryColor}
-              />,
-            );
             return (
               <Employee
                 key={id}
                 employee={employee}
                 backgroundColor={team.primaryColor}
+                deleteEmployee={deleteEmployee}
               />
             );
           })}
