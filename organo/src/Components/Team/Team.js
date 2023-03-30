@@ -16,17 +16,17 @@ export default function Team({ team, employees, changeColor, deleteEmployee }) {
         <input
           type="color"
           className="input-color"
-          value={team.primaryColor}
+          value={team.color}
           onChange={event => changeColor(event.target.value, team.name)}
         />
-        <h3 style={{ borderColor: team.primaryColor }}>{team.name}</h3>
+        <h3 style={{ borderColor: team.color }}>{team.name}</h3>
         <div className="employees">
           {employees.map((employee, id) => {
             return (
               <Employee
                 key={id}
                 employee={employee}
-                backgroundColor={team.primaryColor}
+                backgroundColor={team.color}
                 deleteEmployee={deleteEmployee}
               />
             );

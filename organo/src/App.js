@@ -10,44 +10,37 @@ function App() {
     {
       id: uuidv4(),
       name: "Programação",
-      primaryColor: "#57c278",
-      secondaryColor: "#d9f7e9",
+      color: "#57c278",
     },
     {
       id: uuidv4(),
       name: "Front-End",
-      primaryColor: "#82cffa",
-      secondaryColor: "#e8f8ff",
+      color: "#82cffa",
     },
     {
       id: uuidv4(),
       name: "Data Science",
-      primaryColor: "#a6d157",
-      secondaryColor: "#f0f8e2",
+      color: "#a6d157",
     },
     {
       id: uuidv4(),
       name: "Devops",
-      primaryColor: "#e06b69",
-      secondaryColor: "#fde7e8",
+      color: "#e06b69",
     },
     {
       id: uuidv4(),
       name: "UX e Design",
-      primaryColor: "#db6ebf",
-      secondaryColor: "#fae9f5",
+      color: "#db6ebf",
     },
     {
       id: uuidv4(),
       name: "Mobile",
-      primaryColor: "#ffba05",
-      secondaryColor: "#fff5d9",
+      color: "#ffba05",
     },
     {
       id: uuidv4(),
       name: "Inovação e Gestão",
-      primaryColor: "#ff8a29",
-      secondaryColor: "#ffeedf",
+      color: "#ff8a29",
     },
   ]);
 
