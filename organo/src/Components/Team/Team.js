@@ -1,7 +1,7 @@
 import React from "react";
-import { FaTeamspeak } from "react-icons/fa";
 import Employee from "../Employee/Employee";
 import "./Team.css";
+import hexToRgba from 'hex-to-rgba';
 
 export default function Team({ team, employees, changeColor, deleteEmployee }) {
   return (
@@ -9,7 +9,7 @@ export default function Team({ team, employees, changeColor, deleteEmployee }) {
       <section
         className="team"
         style={{
-          backgroundColor: team.secondaryColor,
+          backgroundColor: hexToRgba(team.color, 0.2),
           backgroundImage: "url(/images/fundo.png)",
         }}
       >
