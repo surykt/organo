@@ -252,8 +252,8 @@ function App() {
     );
   }
 
-  function deleteEmployee() {
-    console.log("employee was deleted!!");
+  function deleteEmployee(id) {
+    setEmployees(employees.filter(employee => employee.id !== id))
   }
 
   return (

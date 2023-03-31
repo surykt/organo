@@ -9,7 +9,7 @@ export default function Employee({
 }) {
   return (
     <div className="employee">
-      <FaTrashAlt className="delete-btn" onClick={() => {}} />
+      <FaTrashAlt className="delete-btn" onClick={()=> deleteEmployee(employee.id)} />
       <div className="header" style={{ backgroundColor: backgroundColor }}>
         <img src={employee.image} alt={employee.name}></img>
       </div>
