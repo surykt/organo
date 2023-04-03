@@ -4,11 +4,13 @@ import TextField from "../TextField/TextField";
 import DropdownList from "../DropdownList/DropdownList";
 import Button from "../Button/Button";
 
-export default function Form({ registerEmployee, teams }) {
+export default function Form({ registerEmployee, teams, registerTeam }) {
   const [name, setName] = useState("");
   const [role, setRole] = useState("");
   const [image, setImage] = useState("");
   const [team, setTeam] = useState("");
+  const [teamName, setTeamName] = useState("");
+  const [teamColor, setTeamColor] = useState("");
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -25,8 +27,8 @@ export default function Form({ registerEmployee, teams }) {
   };
 
   return (
-    <section className="form">
-      <form onSubmit={handleSubmit}>
+    <section className="form-container">
+      <form className="form" onSubmit={handleSubmit}>
         <h2>Preencha os dados para criar o card do colaborador</h2>
         <TextField
           required
@@ -58,21 +60,27 @@ export default function Form({ registerEmployee, teams }) {
         <Button>Criar Card</Button>
       </form>
 
-      <form onSubmit={handleSubmit}>
+      <form
+        className="form"
+        onSubmit={event => {
+          event.preventDefault();
+          registerTeam({ name: teamName, color: teamColor });
+        }}
+      >
         <h2>Preencha os dados para criar um novo time.</h2>
         <TextField
           required
           label=" Nome do Time"
           placeholder="Digite o nome do time"
-          value={name}
-          valueChange={value => setName(value)}
+          value={teamName}
+          valueChange={value => setTeamName(value)}
         />
         <TextField
           required
           label="Cor do Time"
           placeholder="Digite a cor do time"
-          value={role}
-          valueChange={value => setRole(value)}
+          value={teamColor}
+          valueChange={value => setTeamColor(value)}
         />
         <Button>Criar novo time</Button>
       </form>

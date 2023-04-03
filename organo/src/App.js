@@ -252,6 +252,10 @@ function App() {
     );
   }
 
+  function registerTeam(newTeam) {
+    setTeams([...teams, { ...newTeam, id: uuidv4() }]);
+  }
+
   function deleteEmployee(id) {
     setEmployees(employees.filter(employee => employee.id !== id));
   }
@@ -262,6 +266,7 @@ function App() {
         <Banner />
       </header>
       <Form
+        registerTeam={registerTeam}
         teams={teams.map(team => team.name)}
         registerEmployee={employee => setEmployees([...employees, employee])}
       />
