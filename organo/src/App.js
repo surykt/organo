@@ -253,7 +253,7 @@ function App() {
   }
 
   function deleteEmployee(id) {
-    setEmployees(employees.filter(employee => employee.id !== id))
+    setEmployees(employees.filter(employee => employee.id !== id));
   }
 
   return (

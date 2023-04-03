@@ -18,10 +18,10 @@ export default function Form({ registerEmployee, teams }) {
       image,
       team,
     });
-    setName("")
-    setRole("")
-    setImage("")
-    setTeam("")
+    setName("");
+    setRole("");
+    setImage("");
+    setTeam("");
   };
 
   return (
@@ -29,21 +29,21 @@ export default function Form({ registerEmployee, teams }) {
       <form onSubmit={handleSubmit}>
         <h2>Preencha os dados para criar o card do colaborador</h2>
         <TextField
-          required={true}
+          required
           label="Nome"
           placeholder="Digite seu nome"
           value={name}
           valueChange={value => setName(value)}
         />
         <TextField
-          required={true}
+          required
           label="Cargo"
           placeholder="Digite seu cargo"
           value={role}
           valueChange={value => setRole(value)}
         />
         <TextField
-          required={true}
+          required
           label="Imagem"
           placeholder="Informe o endereço da imagem"
           value={image}
@@ -56,6 +56,25 @@ export default function Form({ registerEmployee, teams }) {
           valueChange={value => setTeam(value)}
         />
         <Button>Criar Card</Button>
+      </form>
+
+      <form onSubmit={handleSubmit}>
+        <h2>Preencha os dados para criar um novo time.</h2>
+        <TextField
+          required
+          label=" Nome do Time"
+          placeholder="Digite o nome do time"
+          value={name}
+          valueChange={value => setName(value)}
+        />
+        <TextField
+          required
+          label="Cor do Time"
+          placeholder="Digite a cor do time"
+          value={role}
+          valueChange={value => setRole(value)}
+        />
+        <Button>Criar novo time</Button>
       </form>
     </section>
   );
