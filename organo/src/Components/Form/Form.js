@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Form.css";
-import TextField from "../TextField/TextField";
+import Field from "../Field/Field";
 import DropdownList from "../DropdownList/DropdownList";
 import Button from "../Button/Button";
 
@@ -30,21 +30,21 @@ export default function Form({ registerEmployee, teams, registerTeam }) {
     <section className="form-container">
       <form className="form" onSubmit={handleSubmit}>
         <h2>Preencha os dados para criar o card do colaborador</h2>
-        <TextField
+        <Field
           required
           label="Nome"
           placeholder="Digite seu nome"
           value={name}
           valueChange={value => setName(value)}
         />
-        <TextField
+        <Field
           required
           label="Cargo"
           placeholder="Digite seu cargo"
           value={role}
           valueChange={value => setRole(value)}
         />
-        <TextField
+        <Field
           required
           label="Imagem"
           placeholder="Informe o endereço da imagem"
@@ -68,15 +68,16 @@ export default function Form({ registerEmployee, teams, registerTeam }) {
         }}
       >
         <h2>Preencha os dados para criar um novo time.</h2>
-        <TextField
+        <Field
           required
           label=" Nome do Time"
           placeholder="Digite o nome do time"
           value={teamName}
           valueChange={value => setTeamName(value)}
         />
-        <TextField
+        <Field
           required
+          type="color"
           label="Cor do Time"
           placeholder="Digite a cor do time"
           value={teamColor}
