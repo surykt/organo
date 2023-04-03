@@ -260,6 +260,17 @@ function App() {
     setEmployees(employees.filter(employee => employee.id !== id));
   }
 
+  function favoriteEmployee(id) {
+    setEmployees(
+      employees.map(employee => {
+        if (employee.id === id) {
+          employee.isFavorite = !employee.isFavorite;
+        }
+        return employee;
+      }),
+    );
+  }
+
   return (
     <div className="App">
       <header className="banner">
@@ -282,6 +293,7 @@ function App() {
               )}
               changeColor={changeTeamColor}
               deleteEmployee={deleteEmployee}
+              favoriteEmployee={favoriteEmployee}
             />
           );
         })}

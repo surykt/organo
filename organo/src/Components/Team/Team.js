@@ -1,9 +1,15 @@
 import React from "react";
 import Employee from "../Employee/Employee";
 import "./Team.css";
-import hexToRgba from 'hex-to-rgba';
+import hexToRgba from "hex-to-rgba";
 
-export default function Team({ team, employees, changeColor, deleteEmployee }) {
+export default function Team({
+  team,
+  employees,
+  changeColor,
+  deleteEmployee,
+  favoriteEmployee,
+}) {
   return (
     employees.length > 0 && (
       <section
@@ -28,6 +34,7 @@ export default function Team({ team, employees, changeColor, deleteEmployee }) {
                 employee={employee}
                 backgroundColor={team.color}
                 deleteEmployee={deleteEmployee}
+                favoriteEmployee={favoriteEmployee}
               />
             );
           })}
