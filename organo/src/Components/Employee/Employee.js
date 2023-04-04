@@ -9,6 +9,16 @@ export default function Employee({
   deleteEmployee,
   favoriteEmployee,
 }) {
+
+  const favoriteProps = {
+    size: 32,
+    onClick: handleFavorite
+  }
+
+  function handleFavorite() {
+    favoriteEmployee(employee.id)
+  }
+
   return (
     <div className="employee">
       <FaTrashAlt
@@ -21,8 +31,8 @@ export default function Employee({
       <div className="footer-card">
         <h4>{employee.name}</h4>
         <h5>{employee.role}</h5>
-        <div className="favorite" onClick={() => favoriteEmployee(employee.id)}>
-          {employee.isfavorite ? <AiFillHeart /> : <AiOutlineHeart />}
+        <div className="favorite">
+          {employee.isFavorite ? <AiFillHeart {...favoriteProps} color="#e91313" /> : <AiOutlineHeart {...favoriteProps} />}
         </div>
       </div>
     </div>
