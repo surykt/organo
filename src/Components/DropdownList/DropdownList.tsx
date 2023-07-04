@@ -1,11 +1,22 @@
 import React from "react";
 import "./DropdownList.css";
 
-export default function DropdownList({ label, items, value, valueChange }) {
+interface DropdownListProps {
+  label: string;
+  items: string[];
+  value: string;
+  valueChange: (value: string) => void;
+}
 
-  const handleChange = event => {
-    valueChange(event.target.value)
-  }
+export default function DropdownList({
+  label,
+  items,
+  value,
+  valueChange,
+}: DropdownListProps) {
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    valueChange(event.target.value);
+  };
 
   return (
     <div className="dropdown-list">
