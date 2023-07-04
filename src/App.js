@@ -274,7 +274,10 @@ function App() {
   return (
     <div className="App">
       <header className="banner">
-        <Banner imagePath="/images/banner.png" alternativeText="Imagem de um Banner"/>
+        <Banner
+          imagePath="/images/banner.png"
+          alternativeText="Imagem de um Banner"
+        />
       </header>
       <Form
         registerTeam={registerTeam}
@@ -283,7 +286,7 @@ function App() {
       />
       <section className="times">
         <h1>Minha organização</h1>
-        {teams.map((team, id) => {
+        {teams.map(team => {
           return (
             <Team
               key={id}

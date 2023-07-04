@@ -3,8 +3,19 @@ import "./Form.css";
 import Field from "../Field/Field";
 import DropdownList from "../DropdownList/DropdownList";
 import Button from "../Button/Button";
+import { IColaborador } from "../../shared/IColaborador";
 
-export default function Form({ registerEmployee, teams, registerTeam }) {
+interface FormProps {
+  registerEmployee: (employee: IColaborador) => void;
+  teams: string[];
+  registerTeam: (name: string, color: string) => void;
+}
+
+export default function Form({
+  registerEmployee,
+  teams,
+  registerTeam,
+}: FormProps) {
   const [name, setName] = useState("");
   const [role, setRole] = useState("");
   const [image, setImage] = useState("");
@@ -12,7 +23,7 @@ export default function Form({ registerEmployee, teams, registerTeam }) {
   const [teamName, setTeamName] = useState("");
   const [teamColor, setTeamColor] = useState("");
 
-  const handleSubmit = event => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     registerEmployee({
       name,

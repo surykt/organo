@@ -2,7 +2,7 @@ import React from "react";
 import "./Button.css";
 
 interface BotaoProps {
-  children: React.ReactElement;
+  children: React.ReactElement | string;
 }
 
 export default function Button({ children }: BotaoProps) {

@@ -1,7 +1,8 @@
 export interface IColaborador {
-  name: string
-  image: string
-  role: string
-  id: number
-  isFavorite: boolean
+  name: string;
+  image: string;
+  role: string;
+  id?: number;
+  isFavorite?: boolean;
+  team?: string;
 }
