@@ -1,6 +1,16 @@
 import React from "react";
 import "./Field.css";
 
+interface FieldProps {
+  label: string
+  type: string
+  placeholder: string
+  required: boolean
+  value: string
+  valueChange: (value: string) => void
+}
+
+
 export default function Field({
   label,
   type = "text",
@@ -8,8 +18,8 @@ export default function Field({
   required,
   value,
   valueChange,
-}) {
-  const handleChange = event => {
+}: FieldProps) {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     valueChange(event.target.value);
   };
 
