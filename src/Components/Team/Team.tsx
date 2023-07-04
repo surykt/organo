@@ -2,10 +2,15 @@ import React from "react";
 import Employee from "../Employee/Employee";
 import "./Team.css";
 import hexToRgba from "hex-to-rgba";
+import { IColaborador } from "../../shared/IColaborador";
 
 interface TeamProps {
-  employees: []
-  changeColor: (value: string) => string
+  team: {
+     name: string
+     color: string
+  }
+  employees: IColaborador[]
+  changeColor: (value: string, teamName: string) => void
   deleteEmployee: (id: number) => void
   favoriteEmployee: (id: number) => void
 }
