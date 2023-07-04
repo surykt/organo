@@ -3,13 +3,20 @@ import Employee from "../Employee/Employee";
 import "./Team.css";
 import hexToRgba from "hex-to-rgba";
 
+interface TeamProps {
+  employees: []
+  changeColor: (value: string) => string
+  deleteEmployee: (id: number) => void
+  favoriteEmployee: (id: number) => void
+}
+
 export default function Team({
   team,
   employees,
   changeColor,
   deleteEmployee,
   favoriteEmployee,
-}) {
+} : TeamProps) {
   return (
     employees.length > 0 && (
       <section
