@@ -274,7 +274,7 @@ function App() {
   return (
     <div className="App">
       <header className="banner">
-        <Banner />
+        <Banner imagePath="/images/banner.png" alternativeText="Imagem de um Banner"/>
       </header>
       <Form
         registerTeam={registerTeam}
