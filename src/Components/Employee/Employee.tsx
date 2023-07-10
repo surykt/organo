@@ -5,10 +5,10 @@ import "./Employee.css";
 import { IColaborador } from "../../shared/IColaborador";
 
 interface EmployeeProps {
-  employee: IColaborador
-  backgroundColor: string
-  deleteEmployee: (id: number) => void
-  favoriteEmployee: (id: number) => void
+  employee: IColaborador;
+  backgroundColor: string;
+  deleteEmployee: (id?: string) => void;
+  favoriteEmployee: (id?: string) => void;
 }
 
 export default function Employee({
@@ -16,7 +16,7 @@ export default function Employee({
   backgroundColor,
   deleteEmployee,
   favoriteEmployee,
-} : EmployeeProps) {
+}: EmployeeProps) {
   return (
     <div className="employee">
       <FaTrashAlt

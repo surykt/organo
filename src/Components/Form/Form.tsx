@@ -3,12 +3,12 @@ import "./Form.css";
 import Field from "../Field/Field";
 import DropdownList from "../DropdownList/DropdownList";
 import Button from "../Button/Button";
-import { IColaborador } from "../../shared/IColaborador";
+import { INewColaborador } from "../../shared/IColaborador";
 
 interface FormProps {
-  registerEmployee: (employee: IColaborador) => void;
+  registerEmployee: (employee: INewColaborador) => void;
   teams: string[];
-  registerTeam: (name: string, color: string) => void;
+  registerTeam: (newTeam: { name: string; color: string }) => void;
 }
 
 export default function Form({
@@ -21,7 +21,7 @@ export default function Form({
   const [image, setImage] = useState("");
   const [team, setTeam] = useState("");
   const [teamName, setTeamName] = useState("");
-  const [teamColor, setTeamColor] = useState("");
+  const [teamColor, setTeamColor] = useState("#000000");
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -47,6 +47,7 @@ export default function Form({
           placeholder="Digite seu nome"
           value={name}
           valueChange={value => setName(value)}
+          type=""
         />
         <Field
           required
@@ -54,13 +55,14 @@ export default function Form({
           placeholder="Digite seu cargo"
           value={role}
           valueChange={value => setRole(value)}
+          type=""
         />
         <Field
-          required
           label="Imagem"
           placeholder="Informe o endereço da imagem"
           value={image}
           valueChange={value => setImage(value)}
+          type=""
         />
         <DropdownList
           label="Time"
@@ -76,6 +78,8 @@ export default function Form({
         onSubmit={event => {
           event.preventDefault();
           registerTeam({ name: teamName, color: teamColor });
+          setTeamName("");
+          setTeamColor("#000000");
         }}
       >
         <h2>Preencha os dados para criar um novo time.</h2>
@@ -85,6 +89,7 @@ export default function Form({
           placeholder="Digite o nome do time"
           value={teamName}
           valueChange={value => setTeamName(value)}
+          type=""
         />
         <Field
           required

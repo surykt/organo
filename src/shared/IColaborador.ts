@@ -1,8 +1,11 @@
-export interface IColaborador {
+export interface INewColaborador {
   name: string;
   image: string;
   role: string;
-  id?: number;
   isFavorite?: boolean;
-  team?: string;
+  team: string;
+}
+
+export interface IColaborador extends INewColaborador {
+  id?: string;
 }

@@ -23,8 +23,8 @@ export default function DropdownList({
       <label>{label}</label>
       <select onChange={handleChange} value={value}>
         <option value=""></option>
-        {items.map(item => {
-          return <option key={item}>{item}</option>;
+        {items.map((item, index) => {
+          return <option key={index}>{item}</option>;
         })}
       </select>
     </div>
